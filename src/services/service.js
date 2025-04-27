@@ -1,6 +1,7 @@
 const matches = require('../data/matches');
 const players = require('../data/players');
 const stats = require('../data/stats');
+const odds = require('../data/odds');
 
 class Service {
   static async getTeamMatches() {
@@ -33,13 +34,15 @@ class Service {
     return stats.playerStats[playerNickname] || null;
   }
 
-static async getMatchOdds(matchId) {
-  return odds.find(o => o.matchId === matchId) || {
-    teams: ["FURIA", "TBD"],
-    odds: { FURIA: 1.80, TBD: 2.00, Draw: 3.00 },
-    source: "https://www.oddsportal.com"
-  };
-}
+  static async getMatchOdds(matchId) {
+    const found = odds.find(o => o.matchId === matchId);
+    return found || {
+      teams: ["FURIA", "TBD"],
+      odds: { FURIA: 1.80, TBD: 2.00, Draw: 3.00 },
+      lastUpdated: new Date(),
+      source: "https://www.oddsportal.com"
+    };
+  }
 }
 
 module.exports = Service;

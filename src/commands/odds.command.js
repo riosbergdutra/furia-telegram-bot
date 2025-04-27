@@ -1,3 +1,4 @@
+const { Telegraf, Markup } = require('telegraf'); // Adicione esta linha
 const Service = require('../services/service');
 const { escapeMarkdown } = require('../utils/helpers');
 
@@ -24,7 +25,10 @@ async function oddsCommand(ctx) {
     );
 
     await ctx.replyWithMarkdownV2(message, {
-      disable_web_page_preview: true
+      disable_web_page_preview: true,
+      ...Markup.inlineKeyboard([
+        Markup.button.url('Ver Odds', odds.source)
+      ])
     });
 
   } catch (error) {
