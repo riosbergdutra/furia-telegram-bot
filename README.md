@@ -1,85 +1,65 @@
 # furia-telegram-bot
 desafio de fazer um bot para o telegram focando no publico de Counter Strike da FURIA
 
-FURIA CS2 Telegram Bot 🐆
-Um bot para acompanhar a equipe de CS2 da FURIA no Telegram, com informações sobre partidas, jogadores, estatísticas e transmissões ao vivo.
+# FURIA CS2 Telegram Bot 🐆
 
-📌 Funcionalidades
-Próximas partidas (/proxpartida)
+Desafio de fazer um bot para o Telegram focando no público de Counter Strike da FURIA.
 
-Últimos resultados (/ultimoresultado)
+## Funcionalidades 📌
 
-Elenco atual (/jogadores)
+- **Próximas partidas** (`/proxpartida`)
+- **Últimos resultados** (`/ultimoresultado`)
+- **Elenco atual** (`/jogadores`)
+- **Estatísticas do time** (`/estatisticas`)
+- **Calendário de jogos** (`/calendario`)
+- **Jogadores ao vivo** (`/live`)
+- **Probabilidades (odds)** (`/odds`)
 
-Estatísticas do time (/estatisticas)
+## Tecnologias 🛠️
 
-Calendário de jogos (/calendario)
+- **Node.js** (v18+)
+- **Telegraf.js** (Framework para bots no Telegram)
+- **Node-cache** (Cache de dados)
 
-Jogadores ao vivo (/live)
+## Instalação ⚙️
 
-Probabilidades (odds) (/odds)
+1. Clone o repositório:
 
-🛠️ Tecnologias
-Node.js (v18+)
+    ```bash
+    git clone https://github.com/seu-usuario/furia-cs2-bot.git
+    cd furia-cs2-bot
+    ```
 
-Telegraf.js (Framework para bots no Telegram)
+2. Instale as dependências:
 
-Node-cache (Cache de dados)
+    ```bash
+    npm install
+    ```
 
-⚙️ Instalação
-Clone o repositório:
+3. Crie um arquivo `.env` com suas credenciais:
 
-bash
-git clone https://github.com/seu-usuario/furia-cs2-bot.git
-cd furia-cs2-bot
-Instale as dependências:
+    ```env
+    TELEGRAM_BOT_TOKEN=seu_token_aqui
+    ADMIN_ID=123456789 # (Opcional) ID do admin para notificações de erro
+    ```
 
-bash
-npm install
-Crie um arquivo .env com suas credenciais:
+4. Execute o bot:
 
-env
-TELEGRAM_BOT_TOKEN=seu_token_aqui
-ADMIN_ID=123456789 # (Opcional) ID do admin para notificações de erro
-Execute o bot:
+    ```bash
+    npm start
+    ```
 
-bash
-npm start
-📊 Estrutura do Projeto
-furia-cs2-bot/
-├── commands/            # Comandos do bot
-│   ├── calendar.command.js
-│   ├── lastResult.command.js
-│   ├── live.command.js
-│   ├── nextMatch.command.js
-│   ├── odds.command.js
-│   ├── players.command.js
-│   └── stats.command.js
-├── data/                # Dados mockados
-│   ├── matches.js
-│   ├── odds.js
-│   ├── players.js
-│   └── stats.js
-├── services/            # Lógica de serviço
-│   └── service.js
-├── utils/               # Utilitários
-│   ├── cache.js
-│   ├── errorHandler.js
-│   ├── helpers.js
-│   └── logger.js
-├── bot.js               # Configuração principal do bot
-├── index.js             # Ponto de entrada
-└── README.md
-📝 Dados Mockados
-O bot utiliza dados de exemplo em:
 
-matches.js: Partidas (passadas, ao vivo e futuras)
+## Dados Mockados 📝
 
-players.js: Jogadores da FURIA
+O bot utiliza dados de exemplo localmente nos seguintes arquivos:
 
-stats.js: Estatísticas do time
+- **matches.js**: Contém informações sobre as partidas (passadas, ao vivo e futuras).
+- **players.js**: Contém informações sobre os jogadores da FURIA.
+- **stats.js**: Contém as estatísticas do time.
+- **odds.js**: Contém as probabilidades de partidas.
 
-odds.js: Probabilidades de partidas
+
 
 
 
